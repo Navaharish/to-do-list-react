@@ -1,8 +1,9 @@
-import React from 'react'
 import { FaPlus } from 'react-icons/fa'
 
-const AddItems = ({ handleSubmit, newItem, handleNewItem, handleAddItem }) => {
+const AddItems = ({ handleSubmit, newItem, handleNewItem, handleAddItem, inputRef }) => {
+
     return (
+
         <form className='form' onSubmit={handleSubmit}>
             <input
                 autoFocus
@@ -11,10 +12,10 @@ const AddItems = ({ handleSubmit, newItem, handleNewItem, handleAddItem }) => {
                 value={newItem}
                 onChange={handleNewItem}
                 required
+                ref={inputRef}
             />
             <FaPlus
-                onClick={handleAddItem}
-            />
+                onClick={handleAddItem} />
         </form>
     )
 }

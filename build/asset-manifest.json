@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/new-box-color-change/static/css/main.3f4b93ff.css",
+    "main.js": "/new-box-color-change/static/js/main.e27aa278.js",
+    "static/js/787.a2bf511c.chunk.js": "/new-box-color-change/static/js/787.a2bf511c.chunk.js",
+    "index.html": "/new-box-color-change/index.html",
+    "main.3f4b93ff.css.map": "/new-box-color-change/static/css/main.3f4b93ff.css.map",
+    "main.e27aa278.js.map": "/new-box-color-change/static/js/main.e27aa278.js.map",
+    "787.a2bf511c.chunk.js.map": "/new-box-color-change/static/js/787.a2bf511c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3f4b93ff.css",
+    "static/js/main.e27aa278.js"
+  ]
+}

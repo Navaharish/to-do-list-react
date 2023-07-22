@@ -10,7 +10,7 @@ const ListItem = ({ item, handleChecked, handleDelete }) => {
                 onChange={() => handleChecked(item.id)}
                 checked={item.checked}
                 aria-checked={item.checked} />
-            <label onClick={() => handleChecked(item.id)}
+            <label onDoubleClick={() => handleChecked(item.id)}
                 style={(item.checked) ? { textDecoration: "line-through" } : null}>{item.item}</label>
             <FaTrashAlt onClick={() => handleDelete(item.id)} />
         </li>

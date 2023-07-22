@@ -148,3 +148,37 @@ ul li::before {
   outline: none;
   margin-top: 1rem;
 }
+
+.box {
+  border: 2px solid grey;
+  box-shadow: 10px 10px 15px 10px grey;
+  letter-spacing: 1px;
+  font-size: 20px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-input {
+  border-radius: 5px;
+  width: 250px;
+  height: 50px;
+  font-size: 18px;
+  padding-left: 1rem;
+  outline: none;
+  margin-top: 5rem;
+}
+
+.box-toggle {
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 18px;
+  margin-left: 3rem;
+}
+
+p {
+  font-size: 18px;
+}
