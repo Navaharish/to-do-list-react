@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+
+
+.header-color {
+  background-color: Blue;
+  color: white;
+  padding: 1rem;
+
+}
