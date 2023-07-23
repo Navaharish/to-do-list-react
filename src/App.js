@@ -5,6 +5,7 @@ import Content from './Components/Content'
 import { useEffect, useRef, useState } from "react";
 import AddItems from './Components/AddItems';
 import SearchInput from './Components/SearchInput';
+import ApiRequest from './Components/ApiRequest';
 
 
 function App() {
@@ -17,15 +18,33 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const inputRef = useRef();
 
-  const handleChecked = (id) => {
+  const handleChecked = async (id) => {
     const ListItem = items.map(item =>
       item.id === id ? { ...item, checked: !item.checked } : item)
     setItems(ListItem)
+
+    const checkItem = ListItem.filter((item) => item.id === id)
+    const updateObj = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ checked: checkItem[0].checked })
+    }
+    const urlReq = `${API_URL}/${id}`
+    const result = await ApiRequest(urlReq, updateObj)
+    if (result) setFetchError(result)
   }
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     const ListItem = items.filter(item => item.id !== id)
     setItems(ListItem)
+    const deleteObj = {
+      method: 'DELETE'
+    }
+    const reqUrl = `${API_URL}/${id}`
+    const result = await ApiRequest(reqUrl, deleteObj)
+    if (result) setFetchError(result)
   }
 
   useEffect(() => {
@@ -52,13 +71,25 @@ function App() {
     }, 2000)
   }, [])
 
-  const addList = (item) => {
+  const addList = async (item) => {
     setNewItem('');
     const id = items.length ? items[items.length - 1].id + 1
       : 1;
     const additems = { id, checked: false, item }
     const ListItem = [...items, additems]
     setItems(ListItem)
+
+    //api create 
+    const postOption = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(additems),
+    };
+    const result = await ApiRequest(API_URL, postOption)
+    if (result) setFetchError(result);
+
   }
 
   const handleSubmit = (e) => {
